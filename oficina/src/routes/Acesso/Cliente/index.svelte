@@ -9,7 +9,7 @@
 	<a href="/Acesso/Cliente/Orcamento">Orçamento</a>
 </nav>
 
-<div class="row">
+<div class="row custom_row">
 	<div class="column">
 		<h2>Fazer um Agendamento</h2>
 		<p>Marque agora um agendamento para realização do orçamento.</p>
@@ -22,9 +22,10 @@
 	</div>
 </div>
 
+<!-- Bootsrap css -->
 <link
 	rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
 />
 
 <style>
@@ -65,13 +66,13 @@
 	}
 
 	/* Clear floats after the columns */
-	.row:after {
+	.custom_row:after {
 		content: '';
 		display: table;
 		clear: both;
 	}
 
-	.row {
+	.custom_row {
 		font-family: 'Source Sans Pro', sans-serif;
 		color: #454545;
 		font-size: 16px;

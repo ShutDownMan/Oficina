@@ -28,7 +28,7 @@
 
 <div class="body">
 	<form>
-		<div class="row">
+		<div class="row mt-3">
 			<div class="form-group col-md-12">
 				<h2>Informações do Proprietário</h2>
 			</div>
@@ -44,22 +44,22 @@
 		<div class="row">
 			<div class="form-group col-md-2">
 				<label for="ddd"><span style="color: red"> * </span> DDD</label>
-				<input type="text" class="form-control" id="ddd" placeholder="00" />
+				<input type="text" class="form-control" name="ddd" placeholder="00" />
 			</div>
 			<div class="form-group col-md-3">
 				<label for="tel"><span style="color: red"> * </span> Telefone</label>
-				<input type="text" class="form-control" id="tel" placeholder="00000-0000" />
+				<input type="text" class="form-control" name="tel" placeholder="00000-0000" />
 			</div>
 		</div>
 
 		<div class="row">
 			<div class="form-group col-md-12">
 				<label for="email">Email</label>
-				<input type="text" class="form-control" id="email" placeholder="seu_email@exemplo.com" />
+				<input type="text" class="form-control" name="email" placeholder="seu_email@exemplo.com" />
 			</div>
 		</div>
 
-		<div class="row">
+		<div class="row mt-3">
 			<div class="form-group col-md-12">
 				<h2>Informações do Veículo</h2>
 			</div>
@@ -68,7 +68,7 @@
 		<div class="row">
 			<div class="form-group col-md-6">
 				<label for="marca">Marca</label>
-				<select class="form-control" id="marca" bind:value={marca_selected}>
+				<select class="form-control" name="marca" bind:value={marca_selected}>
 					{#each Object.keys(marca_options) as value}<option {value}
 							>{value && value[0].toUpperCase() + value.slice(1)}</option
 						>{/each}
@@ -77,7 +77,7 @@
 
 			<div class="form-group col-md-6">
 				<label for="modelo">Modelo</label>
-				<select class="form-control" id="modelo" bind:value={modelo_selected}>
+				<select class="form-control" name="modelo" bind:value={modelo_selected}>
 					{#each (marca_options[marca_selected] && marca_options[marca_selected].modelos) || [] as value}<option
 							{value}>{value && value[0].toUpperCase() + value.slice(1)}</option
 						>{/each}
@@ -88,11 +88,11 @@
 		<div class="row">
 			<div class="form-group col-md-2">
 				<label for="ano">Ano</label>
-				<input type="number" class="form-control" id="ano" placeholder="2022" />
+				<input type="number" class="form-control" name="ano" placeholder="2022" />
 			</div>
 		</div>
 
-		<div class="row">
+		<div class="row mt-3">
 			<div class="form-group col-md-12">
 				<h2>Informações da Visita</h2>
 			</div>
@@ -100,21 +100,24 @@
 		<div class="row">
 			<div class="form-group col-md-3">
 				<label for="data">Data</label>
-				<input type="date" class="form-control" id="data" />
+				<input type="date" class="form-control" name="data" />
 			</div>
 			<div class="form-group col-md-3">
 				<label for="hora">Horário</label>
-				<input type="time" class="form-control" id="hora" />
+				<input type="time" class="form-control" name="hora" />
 			</div>
 		</div>
 
 		<div class="form-group col-md-12" />
 
-		<div class="row">
-			<div class="form-group col-md-3 pull-right">
-				<a href="/Acesso/Cliente/Agendamento"
-					><button class="go" style="font-family: 'Encode Sans', sans-serif;">AGENDAR</button></a
-				>
+		<div class="row justify-content-end">
+			<div class="form-group col-md-3">
+				<input
+					type="submit"
+					value="AGENDAR"
+					class="go"
+					style="font-family: 'Encode Sans', sans-serif;"
+				/>
 			</div>
 		</div>
 	</form>
