@@ -27,69 +27,114 @@
 </nav>
 
 <div class="body">
-	<form action="">
-		<h2>Informações do Proprietário</h2>
-		<div class="form-group col-xs-12">
-			<label for="nome"><span style="color: red"> * </span>Nome</label>
-			<input type="text" class="form-control" id="nome" placeholder="Digite seu nome aqui" />
-		</div>
-		<div class="form-group col-xs-2">
-			<label for="ddd"><span style="color: red"> * </span> DDD</label>
-			<input type="text" class="form-control" id="ddd" placeholder="00" />
-		</div>
-		<div class="form-group col-xs-3">
-			<label for="tel"><span style="color: red"> * </span> TELEFONE</label>
-			<input type="text" class="form-control" id="tel" placeholder="00000-0000" />
+	<form>
+		<div class="row">
+			<div class="form-group col-md-12">
+				<h2>Informações do Proprietário</h2>
+			</div>
 		</div>
 
-		<div class="form-group col-xs-12">
-			<label for="email">Email</label>
-			<input type="text" class="form-control" id="email" placeholder="seu_email@exemplo.com" />
+		<div class="row">
+			<div class="form-group col-md-12">
+				<label for="nome"><span style="color: red"> * </span>Nome</label>
+				<input type="text" class="form-control" id="nome" placeholder="Digite seu nome aqui" />
+			</div>
 		</div>
 
-		<div class="form-group col-xs-12">
-			<h2>Informações do Veículo</h2>
+		<div class="row">
+			<div class="form-group col-md-2">
+				<label for="ddd"><span style="color: red"> * </span> DDD</label>
+				<input type="text" class="form-control" id="ddd" placeholder="00" />
+			</div>
+			<div class="form-group col-md-3">
+				<label for="tel"><span style="color: red"> * </span> Telefone</label>
+				<input type="text" class="form-control" id="tel" placeholder="00000-0000" />
+			</div>
 		</div>
-		<div class="form-group col-xs-6">
-			<label for="marca">Marca</label>
-			<select class="form-control" id="marca" bind:value={marca_selected}>
-				{#each Object.keys(marca_options) as value}<option {value}
-						>{value && value[0].toUpperCase() + value.slice(1)}</option
-					>{/each}
-			</select>
-		</div>
-		<div class="form-group col-xs-6">
-			<label for="modelo">Modelo</label>
-			<select class="form-control" id="modelo" bind:value={modelo_selected}>
-				{#each (marca_options[marca_selected] && marca_options[marca_selected].modelos) || [] as value}<option
-						{value}>{value && value[0].toUpperCase() + value.slice(1)}</option
-					>{/each}
-			</select>
-		</div>
-		<div class="form-group col-xs-2">
-			<label for="ano">Ano</label>
-			<input type="number" class="form-control" id="ano" placeholder="2022" />
-		</div>
-		<div class="w-100 d-none d-md-block" />
 
-		<div class="form-group col-xs-12">
-			<h2>Informações da Visita</h2>
+		<div class="row">
+			<div class="form-group col-md-12">
+				<label for="email">Email</label>
+				<input type="text" class="form-control" id="email" placeholder="seu_email@exemplo.com" />
+			</div>
 		</div>
-		<div class="form-group col-xs-3">
-			<label for="data">Data</label>
-			<input type="date" class="form-control" id="data" />
+
+		<div class="row">
+			<div class="form-group col-md-12">
+				<h2>Informações do Veículo</h2>
+			</div>
 		</div>
-		<div class="form-group col-xs-3">
-			<label for="hora">Horário</label>
-			<input type="time" class="form-control" id="hora" />
+
+		<div class="row">
+			<div class="form-group col-md-6">
+				<label for="marca">Marca</label>
+				<select class="form-control" id="marca" bind:value={marca_selected}>
+					{#each Object.keys(marca_options) as value}<option {value}
+							>{value && value[0].toUpperCase() + value.slice(1)}</option
+						>{/each}
+				</select>
+			</div>
+
+			<div class="form-group col-md-6">
+				<label for="modelo">Modelo</label>
+				<select class="form-control" id="modelo" bind:value={modelo_selected}>
+					{#each (marca_options[marca_selected] && marca_options[marca_selected].modelos) || [] as value}<option
+							{value}>{value && value[0].toUpperCase() + value.slice(1)}</option
+						>{/each}
+				</select>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="form-group col-md-2">
+				<label for="ano">Ano</label>
+				<input type="number" class="form-control" id="ano" placeholder="2022" />
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="form-group col-md-12">
+				<h2>Informações da Visita</h2>
+			</div>
+		</div>
+		<div class="row">
+			<div class="form-group col-md-3">
+				<label for="data">Data</label>
+				<input type="date" class="form-control" id="data" />
+			</div>
+			<div class="form-group col-md-3">
+				<label for="hora">Horário</label>
+				<input type="time" class="form-control" id="hora" />
+			</div>
+		</div>
+
+		<div class="form-group col-md-12" />
+
+		<div class="row">
+			<div class="form-group col-md-3 pull-right">
+				<a href="/Acesso/Cliente/Agendamento"
+					><button class="go" style="font-family: 'Encode Sans', sans-serif;">AGENDAR</button></a
+				>
+			</div>
 		</div>
 	</form>
 </div>
 
+<!-- Bootsrap css -->
 <link
 	rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
 />
+
+<!-- Bootstrap icons -->
+<link
+	rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css"
+/>
+
+<!-- Fonts -->
+<link href="http://fonts.cdnfonts.com/css/aircruiser" rel="stylesheet" />
+<link href="http://fonts.cdnfonts.com/css/encode-sans-2" rel="stylesheet" />
 
 <style>
 	/* Add a black background color to the top navigation */
@@ -130,5 +175,29 @@
 		padding: 1em;
 		line-height: 1.4;
 		text-align: justify;
+		border-radius: 15px;
+		background: #cecece;
+	}
+
+	.go {
+		color: #ffffff;
+		border: none;
+		text-align: center;
+		cursor: pointer;
+		background-color: #04aa6d;
+		/* border-radius: 5px; */
+		font-size: 23px;
+		font-family: 'Source Sans Pro', sans-serif;
+		padding: 6px 18px;
+	}
+
+	h2 {
+		text-align: center;
+		font-family: 'Aircruiser', sans-serif;
+		font-size: 42px;
+	}
+
+	label {
+		font-family: 'Encode Sans', sans-serif;
 	}
 </style>

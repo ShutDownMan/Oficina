@@ -3,22 +3,22 @@
 
 <nav>
 	<a href="/" class="active">Início</a>
-	<div class="dropdown">
+	<div class="custom_dropdown">
 		<button class="dropbtn"
 			>Acesso
 			<i class="fa fa-caret-down" />
 		</button>
-		<div class="dropdown-content">
+		<div class="custom_dropdown-content">
 			<a href="/Acesso/Colaborador/">Colaborador</a>
 			<a href="/Acesso/Cliente/">Cliente</a>
 		</div>
 	</div>
 </nav>
 
-<!-- <link
+<link
 	rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-/> -->
+/>
 
 <style>
 	/* Add a black background color to the top navigation */
@@ -51,13 +51,13 @@
 	}
 
 	/* The dropdown container */
-	.dropdown {
+	.custom_dropdown {
 		float: left;
 		overflow: hidden;
 	}
 
 	/* Dropdown button */
-	.dropdown .dropbtn {
+	.custom_dropdown .dropbtn {
 		font-size: 16px;
 		border: none;
 		outline: none;
@@ -69,7 +69,7 @@
 	}
 
 	/* Dropdown content (hidden by default) */
-	.dropdown-content {
+	.custom_dropdown-content {
 		display: none;
 		position: absolute;
 		background-color: #f9f9f9;
@@ -79,7 +79,7 @@
 	}
 
 	/* Links inside the dropdown */
-	.dropdown-content a {
+	.custom_dropdown-content a {
 		float: none;
 		color: black;
 		padding: 12px 16px;
@@ -89,12 +89,12 @@
 	}
 
 	/* Add a grey background color to dropdown links on hover */
-	.dropdown-content a:hover {
+	.custom_dropdown-content a:hover {
 		background-color: #ddd;
 	}
 
 	/* Show the dropdown menu on hover */
-	.dropdown:hover .dropdown-content {
+	.custom_dropdown:hover .custom_dropdown-content {
 		display: block;
 	}
 </style>
