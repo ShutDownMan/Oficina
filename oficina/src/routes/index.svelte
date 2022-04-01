@@ -9,16 +9,11 @@
 			<i class="fa fa-caret-down" />
 		</button>
 		<div class="custom_dropdown-content">
-			<a href="/Acesso/Colaborador/">Colaborador</a>
 			<a href="/Acesso/Cliente/">Cliente</a>
+			<a href="/Acesso/Colaborador/">Colaborador</a>
 		</div>
 	</div>
 </nav>
-
-<link
-	rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-/>
 
 <style>
 	/* Add a black background color to the top navigation */

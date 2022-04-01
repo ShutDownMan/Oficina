@@ -3,16 +3,16 @@
 
 <nav>
 	<a href="/">Início</a>
-	<a href="/Acesso/Colaborador" class="active">Colaborador</a>
-	<a href="/Acesso/Agendamentos">Agendamentos</a>
-	<a href="/Acesso/Servicos">Serviços</a>
-	<a href="/Acesso/Produtos">Produtos</a>
+	<a href="/Acesso/Colaborador/Colaborador" class="active">Colaborador</a>
+	<a href="/Acesso/Colaborador/Agendamentos">Agendamentos</a>
+	<a href="/Acesso/Colaborador/Servicos">Serviços</a>
+	<a href="/Acesso/Colaborador/Produtos">Produtos</a>
 </nav>
 
-<div class="row custom_row">
+<div class="row custom-row">
 	<div class="col-md-5 m-3 card">
 		<div class="card-body">
-			<h5 class="card-title">Consultar Agendamos</h5>
+			<h5 class="card-title">Consultar Agendamentos</h5>
 			<h6 class="card-subtitle mb-2 text-muted">Gerenciar a lista de Agendamentos dos Clientes</h6>
 			<p class="card-text">
 				Aqui se encontram a lista de agendamentos realizados pelos clientes.
@@ -42,12 +42,6 @@
 		</div>
 	</div>
 </div>
-
-<!-- Bootsrap css -->
-<link
-	rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-/>
 
 <style>
 	/* Add a black background color to the top navigation */
@@ -79,21 +73,14 @@
 		color: white;
 	}
 
-	.column {
-		float: left;
-		width: 40%;
-		padding: 1rem;
-		/* text-align: justify; */
-	}
-
 	/* Clear floats after the columns */
-	.custom_row:after {
+	.custom-row:after {
 		content: '';
 		display: table;
 		clear: both;
 	}
 
-	.custom_row {
+	.custom-row {
 		font-family: 'Source Sans Pro', sans-serif;
 		color: #454545;
 		font-size: 16px;
@@ -110,7 +97,7 @@
 		text-align: center;
 		cursor: pointer;
 		background-color: #04aa6d;
-		/* border-radius: 5px; */
+		border-radius: 5px;
 		font-size: 17px;
 		font-family: 'Source Sans Pro', sans-serif;
 		padding: 6px 18px;

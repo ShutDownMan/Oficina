@@ -1,34 +1,62 @@
 <script>
-	let orcamento_dados = {
+	import { page } from '$app/stores';
+	const orcamentoID = $page.url.searchParams.get('id');
+
+	let orcamentoDados = {
+		cod: orcamentoID,
 		veiculo: {
-			foto: 'https://picsum.photos/id/111/450',
-			marca: '_marca_',
-			modelo: '_modelo_',
-			ano: '_ano_',
-			cor: '_cor_',
-			combustivel: '_combustivel_',
-			placa: '_placa_'
+			foto: 'https://img2.icarros.com/dbimg/imgadicionalanuncio/5/244536690_1.webp',
+			marca: 'Honda',
+			modelo: 'Fit',
+			ano: '2014',
+			cor: 'Azul Boreal',
+			combustivel: 'Flex',
+			placa: 'XXX XXXX'
 		},
 		cliente: {
 			nome: 'João da Silva'
 		},
 		eta: '5 dias',
-		custo: 'R$ 840,00'
+		custo: 'R$ 840,00',
+		servicos: [
+			{
+				descricao: 'Troca de Pneus',
+				mecanico: 'Otto',
+				custo: 'R$ 250,00',
+				confirmado: false
+			},
+			{
+				descricao: 'Conserto de Parabrisa',
+				mecanico: 'Otto',
+				custo: 'R$ 530,00',
+				confirmado: false
+			},
+			{
+				descricao: 'Troca de Óleo',
+				mecanico: 'Otto',
+				custo: 'R$ 60,00',
+				confirmado: false
+			},
+		]
 	};
+
+ 	function detalhesServico(idx) {
+
+	 }
 </script>
 
 <nav>
 	<a href="/">Início</a>
-	<a href="/Acesso/Cliente">Cliente</a>
-	<a href="/Acesso/Cliente/Agendamento">Agendamento</a>
-	<a href="/Acesso/Cliente/Orcamento" class="active">Orçamento</a>
+	<a href="/Acesso/Cliente" class="active">Cliente</a>
+	<!-- <a href="/Acesso/Cliente/Agendamento">Agendamento</a>
+	<a href="/Acesso/Cliente/Orcamento" class="active">Orçamento</a> -->
 </nav>
 
 <div class="body container">
 	<div class="row my-3">
-		<div class="col-md-5">
+		<div class="col-md-5 align-self-center">
 			<img
-				src={orcamento_dados.veiculo.foto}
+				src={orcamentoDados.veiculo.foto}
 				class="rounded w-100 img-responsive"
 				alt="Imagem do Veículo"
 			/>
@@ -43,19 +71,50 @@
 			<div class="row">
 				<div class="col-md-6 mt-3">
 					<ul class="list-group">
-						<li class="list-group-item"><bdi class="car-attr">Marca:</bdi> {orcamento_dados.veiculo.marca}</li>
-						<li class="list-group-item"><bdi class="car-attr">Modelo:</bdi> {orcamento_dados.veiculo.modelo}</li>
-						<li class="list-group-item"><bdi class="car-attr">Ano:</bdi> {orcamento_dados.veiculo.ano}</li>
-						<li class="list-group-item"><bdi class="car-attr">Cor:</bdi> {orcamento_dados.veiculo.cor}</li>
-						<li class="list-group-item"><bdi class="car-attr">Combustível:</bdi> {orcamento_dados.veiculo.combustivel}</li>
-						<li class="list-group-item"><bdi class="car-attr">Placa:</bdi> {orcamento_dados.veiculo.placa}</li>
+						<li class="list-group-item">
+							<bdi class="car-attr">Marca:</bdi>
+							{orcamentoDados.veiculo.marca}
+						</li>
+						<li class="list-group-item">
+							<bdi class="car-attr">Modelo:</bdi>
+							{orcamentoDados.veiculo.modelo}
+						</li>
+						<li class="list-group-item">
+							<bdi class="car-attr">Ano:</bdi>
+							{orcamentoDados.veiculo.ano}
+						</li>
+						<li class="list-group-item">
+							<bdi class="car-attr">Cor:</bdi>
+							{orcamentoDados.veiculo.cor}
+						</li>
+						<li class="list-group-item">
+							<bdi class="car-attr">Combustível:</bdi>
+							{orcamentoDados.veiculo.combustivel}
+						</li>
+						<li class="list-group-item">
+							<bdi class="car-attr">Placa:</bdi>
+							{orcamentoDados.veiculo.placa}
+						</li>
 					</ul>
 				</div>
 				<div class="col-md-6 mt-3">
 					<ul class="list-group">
-						<li class="list-group-item"><bdi class="car-attr">Cliente:</bdi> {orcamento_dados.cliente.nome}</li>
-						<li class="list-group-item"><bdi class="car-attr">Tempo de Entrega:</bdi> {orcamento_dados.eta}</li>
-						<li class="list-group-item"><bdi class="car-attr">Custo do Serviço:</bdi> {orcamento_dados.custo}</li>
+						<li class="list-group-item">
+							<bdi class="car-attr">Cliente:</bdi>
+							{orcamentoDados.cliente.nome}
+						</li>
+						<li class="list-group-item">
+							<bdi class="car-attr">Tempo de Entrega:</bdi>
+							{orcamentoDados.eta}
+						</li>
+						<li class="list-group-item">
+							<bdi class="car-attr">Custo do Serviço:</bdi>
+							{orcamentoDados.custo}
+						</li>
+						<li class="list-group-item">
+							<bdi class="car-attr">Código:</bdi>
+							{orcamentoDados.cod}
+						</li>
 					</ul>
 				</div>
 			</div>
@@ -84,30 +143,24 @@
 							</tr>
 						</thead>
 						<tbody>
-							<tr style="text-align: center">
-								<th scope="row">1</th>
-								<td>Troca de Pneus</td>
-								<td>Otto</td>
-								<td>R$ 250,00</td>
-								<td style="text-align: center"><input type="checkbox" name="confirm" id="" /></td>
-								<td><a href="#"><i class="bi bi-plus" /></a></td>
-							</tr>
-							<tr style="text-align: center">
-								<th scope="row">2</th>
-								<td>Conserto de Parabrisa</td>
-								<td>Otto</td>
-								<td>R$ 530,00</td>
-								<td style="text-align: center"><input type="checkbox" name="confirm" id="" /></td>
-								<td><a href="#"><i class="bi bi-plus" /></a></td>
-							</tr>
-							<tr style="text-align: center">
-								<th scope="row">3</th>
-								<td>Troca de Óleo</td>
-								<td>Otto</td>
-								<td>R$ 60,00</td>
-								<td style="text-align: center"><input type="checkbox" name="confirm" id="" /></td>
-								<td><a href="#"><i class="bi bi-plus" /></a></td>
-							</tr>
+							{#each orcamentoDados.servicos as servico, idx}
+								<tr style="text-align: center">
+									<th scope="row">{idx + 1}</th>
+									<td>{servico.descricao}</td>
+									<td>{servico.mecanico}</td>
+									<td>{servico.custo}</td>
+									<td style="text-align: center"
+										><input class="form-check-input" type="checkbox" name="confirm" id="" bind:value={servico.confirmado}/></td
+									>
+									<td>
+										<a href="#" on:click={() => {detalhesServico(idx)}}>
+											<span class="badge badge-light">
+												<i class="bi bi-plus" style="font-size: 25px;" />
+											</span>
+										</a>
+									</td>
+								</tr>
+							{/each}
 						</tbody>
 					</table>
 				</div>
@@ -126,21 +179,15 @@
 	</div>
 </div>
 
-<!-- Bootsrap css -->
-<link
-	rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-/>
-
-<!-- Bootstrap icons -->
-<link
-	rel="stylesheet"
-	href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css"
-/>
-
 <!-- Fonts -->
 <link href="http://fonts.cdnfonts.com/css/aircruiser" rel="stylesheet" />
 <link href="http://fonts.cdnfonts.com/css/encode-sans-2" rel="stylesheet" />
+
+<!-- Icons -->
+<link
+	rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css"
+/>
 
 <style>
 	/* Add a black background color to the top navigation */

@@ -21,12 +21,12 @@
 
 <nav>
 	<a href="/">Início</a>
-	<a href="/Acesso/Cliente">Cliente</a>
-	<a href="/Acesso/Cliente/Agendamento" class="active">Agendamento</a>
-	<a href="/Acesso/Cliente/Orcamento">Orçamento</a>
+	<a href="/Acesso/Cliente" class="active">Cliente</a>
+	<!-- <a href="/Acesso/Cliente/Agendamento" class="active">Agendamento</a>
+	<a href="/Acesso/Cliente/Orcamento">Orçamento</a> -->
 </nav>
 
-<div class="body">
+<div class="body card">
 	<form>
 		<div class="row mt-3">
 			<div class="form-group col-md-12">
